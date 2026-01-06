@@ -5,11 +5,24 @@ const connectDB = require('./config/db');
 
 // Import routes
 const authRoutes = require('./routes/auth');
+const problemRoutes = require('./routes/problems');
+const attemptRoutes = require('./routes/attempts');
 
 const app = express();
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB and auto-seed if needed
+connectDB().then(async () => {
+  // Auto-seed database if empty (development only)
+  if (process.env.NODE_ENV === 'development') {
+    const Problem = require('./models/Problem');
+    const seedProblemsWithHints = require('./utils/seedProblemsWithHints');
+
+    const count = await Problem.countDocuments();
+    if (count === 0) {
+      await seedProblemsWithHints();
+    }
+  }
+});
 
 // Middleware
 app.use(cors({
@@ -41,6 +54,8 @@ app.get('/health', (req, res) => {
 
 // API Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/problems', problemRoutes);
+app.use('/api/attempts', attemptRoutes);
 
 // 404 handler
 app.use((req, res) => {
