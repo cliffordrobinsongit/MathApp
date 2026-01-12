@@ -1,0 +1,115 @@
+.tag-management {
+  max-width: 1200px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.tag-section {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-header h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.section-header .description {
+  margin: 0 0 20px 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.tag-list {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #95a5a6;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+.tag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background-color: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.tag-item:hover {
+  background-color: #ecf0f1;
+}
+
+.tag-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.btn-delete-tag {
+  padding: 5px 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.btn-delete-tag:hover {
+  opacity: 0.8;
+}
+
+.add-tag-form {
+  display: flex;
+  gap: 10px;
+}
+
+.add-tag-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-add-tag {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-add-tag:hover {
+  background-color: #229954;
+}

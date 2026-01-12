@@ -2,11 +2,11 @@ import axios from 'axios';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001',
   headers: {
     'Content-Type': 'application/json'
   },
-  timeout: 10000 // 10 second timeout
+  timeout: 120000 // 120 second timeout (2 minutes) - increased for long-running operations like bulk generation
 });
 
 // Request interceptor - attach JWT token to all requests

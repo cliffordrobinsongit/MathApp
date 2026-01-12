@@ -1,0 +1,133 @@
+.problem-form {
+  max-width: 800px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.problem-form h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.alternate-answer-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.alternate-answer-row input {
+  flex: 1;
+}
+
+.btn-add,
+.btn-remove {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.btn-add {
+  background-color: #27ae60;
+  color: white;
+  margin-top: 5px;
+}
+
+.btn-remove {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-add:hover,
+.btn-remove:hover {
+  opacity: 0.8;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.form-actions .btn-primary,
+.form-actions .btn-secondary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.form-actions .btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.form-actions .btn-secondary {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.form-actions .btn-primary:disabled,
+.form-actions .btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-actions .btn-primary:not(:disabled):hover,
+.form-actions .btn-secondary:not(:disabled):hover {
+  opacity: 0.9;
+}

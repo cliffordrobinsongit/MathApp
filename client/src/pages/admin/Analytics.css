@@ -1,0 +1,138 @@
+.analytics {
+  max-width: 1000px;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.search-container {
+  margin-bottom: 30px;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #bdc3c7;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ecf0f1;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #ecf0f1;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-title {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.dropdown-meta {
+  font-size: 13px;
+  color: #7f8c8d;
+}
+
+.analytics-results {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.problem-info {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.problem-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.problem-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 12px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid #e9ecef;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.no-data {
+  margin-top: 30px;
+  padding: 40px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #7f8c8d;
+  font-size: 15px;
+}
