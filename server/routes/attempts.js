@@ -8,9 +8,9 @@ const authenticate = require('../middleware/auth');
 // @access  Private
 router.post('/submit', authenticate, submitAnswer);
 
-// @route   GET /api/attempts/:problemId/hint
-// @desc    Get hint for a problem (query param: level=steps|solution)
+// @route   POST /api/attempts/:problemId/hint
+// @desc    Get dynamic hint for a problem (body: level, studentAnswer, attemptNumber)
 // @access  Private
-router.get('/:problemId/hint', authenticate, getHint);
+router.post('/:problemId/hint', authenticate, getHint);
 
 module.exports = router;

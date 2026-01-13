@@ -13,9 +13,9 @@ router.post('/register', register);
 // @access  Public
 router.post('/login', login);
 
-// @route   POST /api/auth/me
+// @route   GET /api/auth/me
 // @desc    Get current authenticated user
 // @access  Private
-router.post('/me', authenticate, getCurrentUser);
+router.get('/me', authenticate, getCurrentUser);
 
 module.exports = router;

@@ -23,11 +23,21 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Password is required'],
     minlength: [6, 'Password must be at least 6 characters long']
   },
+  role: {
+    type: String,
+    required: true,
+    enum: ['student', 'admin'],
+    default: 'student',
+    lowercase: true
+  },
   createdAt: {
     type: Date,
     default: Date.now
   }
 });
+
+// Index for faster role queries
+userSchema.index({ role: 1 });
 
 // Hash password before saving
 userSchema.pre('save', async function() {

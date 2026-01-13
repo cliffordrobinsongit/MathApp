@@ -113,7 +113,7 @@ export const logoutUser = () => {
  */
 export const getCurrentUser = async () => {
   try {
-    const response = await api.post('/api/auth/me');
+    const response = await api.get('/api/auth/me');
     return response;
   } catch (error) {
     throw error;

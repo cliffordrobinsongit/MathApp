@@ -1,6 +1,12 @@
 import { useState } from 'react';
 
-const HintSystem = ({ problemId, onHintRequest, attemptNumber }) => {
+const HintSystem = ({
+  problemId,
+  onHintRequest,
+  attemptNumber,
+  studentAnswer,
+  onSolutionViewed
+}) => {
   const [hintLevel, setHintLevel] = useState(null);
   const [loading, setLoading] = useState(false);
   const [hint, setHint] = useState(null);
@@ -8,10 +14,15 @@ const HintSystem = ({ problemId, onHintRequest, attemptNumber }) => {
   const handleShowHint = async (level) => {
     setLoading(true);
     try {
-      const result = await onHintRequest(problemId, level);
+      const result = await onHintRequest(problemId, level, studentAnswer, attemptNumber);
       if (result) {
         setHint(result.hint);
         setHintLevel(level);
+
+        // Notify parent when solution is viewed
+        if (level === 'solution' && onSolutionViewed) {
+          onSolutionViewed(problemId);
+        }
       }
     } catch (error) {
       console.error('Error fetching hint:', error);

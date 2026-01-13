@@ -67,7 +67,17 @@ const useProblem = () => {
       }
     } catch (err) {
       console.error('Error submitting answer:', err);
-      setError(err.message || 'Failed to submit answer');
+
+      // Handle solution viewed error
+      if (err.response?.status === 403 && err.response?.data?.solutionViewed) {
+        setError(err.response.data.message);
+        // Auto-clear error after 3 seconds
+        setTimeout(() => {
+          setError(null);
+        }, 3000);
+      } else {
+        setError(err.response?.data?.message || err.message || 'Failed to submit answer');
+      }
       return null;
     } finally {
       setSubmitting(false);
@@ -85,16 +95,23 @@ const useProblem = () => {
    * Request a hint for the current problem
    * @param {string} problemId - The problem ID
    * @param {string} level - Hint level ('steps' or 'solution')
+   * @param {string} studentAnswer - The student's incorrect answer
+   * @param {number} attemptNumber - The current attempt number
    */
-  const requestHint = async (problemId, level) => {
+  const requestHint = async (problemId, level, studentAnswer, attemptNumber) => {
     try {
-      const response = await api.get(`/api/attempts/${problemId}/hint?level=${level}`);
+      const response = await api.post(`/api/attempts/${problemId}/hint`, {
+        level,
+        studentAnswer,
+        attemptNumber
+      });
 
       if (response.success) {
         return {
           hint: response.hint,
           level: response.level,
-          nextStep: response.nextStep
+          nextStep: response.nextStep,
+          cached: response.cached
         };
       } else {
         throw new Error('Failed to get hint');

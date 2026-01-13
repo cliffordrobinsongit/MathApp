@@ -9,20 +9,17 @@ const problemSchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, 'Category is required'],
-    enum: ['pre-algebra', 'algebra'],
-    lowercase: true
+    trim: true
   },
   subcategory: {
     type: String,
     required: [true, 'Subcategory is required'],
-    trim: true,
-    lowercase: true
+    trim: true
   },
   difficulty: {
     type: String,
     required: [true, 'Difficulty is required'],
-    enum: ['pre-algebra', 'algebra-1', 'algebra-2'],
-    lowercase: true
+    trim: true
   },
   problemText: {
     type: String,
@@ -58,14 +55,28 @@ const problemSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  source: {
+    type: String,
+    enum: ['seed', 'admin-manual', 'admin-generated'],
+    default: 'seed'
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  exampleProblemId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Problem'
+  },
   createdAt: {
     type: Date,
     default: Date.now
   }
 });
 
-// Index for faster random selection
-problemSchema.index({ category: 1, difficulty: 1 });
+// Indexes for faster queries
+problemSchema.index({ category: 1, difficulty: 1, subcategory: 1 });
+problemSchema.index({ source: 1, createdAt: -1 });
 
 const Problem = mongoose.model('Problem', problemSchema);
 

@@ -59,6 +59,7 @@ const register = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        role: user.role || 'student',
         createdAt: user.createdAt
       }
     });
@@ -138,6 +139,7 @@ const login = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        role: user.role || 'student',
         createdAt: user.createdAt
       }
     });
@@ -171,6 +173,7 @@ const getCurrentUser = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        role: user.role || 'student',
         createdAt: user.createdAt
       }
     });

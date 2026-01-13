@@ -1,0 +1,206 @@
+/**
+ * Practice Page Styles
+ * 
+ * Styles for the main practice interface.
+ * Extracted from inline styles to improve maintainability.
+ */
+
+.practice-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.practice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.practice-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.practice-logout-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #ef4444;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.practice-logout-button:hover {
+  background-color: #dc2626;
+}
+
+.practice-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.practice-loading-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.practice-loading-text {
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.practice-error-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.practice-error-text {
+  font-size: 16px;
+  color: #ef4444;
+  margin-bottom: 20px;
+}
+
+.practice-retry-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.practice-retry-button:hover {
+  background-color: #2563eb;
+}
+
+.practice-result-container {
+  margin-top: 20px;
+}
+
+.practice-result-card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+}
+
+.practice-result-card.correct {
+  border-left-color: #10b981;
+}
+
+.practice-result-card.incorrect {
+  border-left-color: #f59e0b;
+}
+
+.practice-result-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.practice-feedback {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.practice-correct-answer {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #6b7280;
+  font-family: monospace;
+}
+
+.practice-button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.practice-next-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #10b981;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.practice-next-button:hover {
+  background-color: #059669;
+}
+
+.practice-try-again-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #f59e0b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.practice-try-again-button:hover {
+  background-color: #d97706;
+}
+
+.practice-skip-container {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.practice-skip-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.practice-skip-button:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.practice-skip-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.practice-solution-viewed-message {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 12px;
+}
